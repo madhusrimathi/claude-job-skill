@@ -1,51 +1,38 @@
-# job-skill
+# Job Skill — Singapore / ChatGPT edition
 
-AI-powered job search assistant for Indian professionals — built as a Claude Skill.
+A reusable instruction workflow for Singapore finance, fintech, risk, quantitative and data analytics internship searches. Adapted from the original Claude/India-focused job-skill.
 
-Searches 12+ Indian and global job platforms (Naukri, LinkedIn, Instahyre, Cutshort, Hirist,
-Indeed India, Foundit, Shine, TimesJobs, Glassdoor, WeWorkRemotely, AngelList) plus direct
-company career pages, generates ATS-optimized, human-sounding resumes and cover letters
-tailored to each job posting, scores keyword match, tracks applications, and can automate
-nightly searches with a morning report.
+## What changed
 
-## Commands
+- Singapore employer career pages and local job boards replace India-focused sources.
+- ChatGPT-compatible tool discovery replaces Claude-specific commands and scheduling APIs.
+- Date compatibility is checked separately from skills: open matches, dates to confirm, watchlist, or dates that do not fit.
+- Student CVs and cover letters use verified evidence; no invented ATS scores, experience or rejection diagnoses.
+- Tracking records actual application outcomes; recurring searches require an explicit scheduling request.
 
-- `/job-skill help` — usage guide
-- `/job-skill search` — search all platforms for roles matching your profile
-- `/job-skill automate` — set up a nightly automated search with a morning report
-- `/job-skill status` — check application status (auto-detects rejections/interviews via Gmail if connected)
+## Use
 
-Natural language also works — e.g. "Find me React jobs in Bangalore", "Apply to this job: [URL]",
-"What's the status of my applications?"
+Ask ChatGPT Work to install the skill from this repository, or use its skill-creator workflow to adapt it to your profile. Forking alone does not activate a skill. Installation and scheduling depend on the capabilities available in your ChatGPT environment.
 
-## Key features
+Once enabled, select **Job Skill — Singapore** from the skill picker where supported, or ask naturally:
 
-- 13-channel search (12+ job boards + direct company career pages)
-- Tailored resume + cover letter generated per job, written to sound human (no AI clichés,
-  no templated bullet rhythm) rather than obviously AI-generated
-- Internal ATS keyword optimization (target ≥70% match) — never shown as a raw score to the user
-- Application tracker (`job_tracker.xlsx`) with status flow from Found → Applied → Offer/Rejected
-- Gmail-based auto-detection of rejections, interview invites, and assessments
-- **Auto-improvement on rejection patterns**: when Gmail shows repeated or same-day rejections,
-  the skill diagnoses the likely cause (ATS filter vs. targeting vs. seniority mismatch) and
-  automatically tightens keyword matching or search targeting going forward — and always tells
-  you what changed and why
-- Clean output only: no tool/JS/code-block narration, no "let me check X" pauses — just job
-  listings, fitness scores, apply links, and status updates
-- Weekly self-correction review of response/interview/ghosted rates
+- "Use job-skill to find Singapore finance internships for late August 2027 to end January 2028."
+- "Tailor my CV to this risk internship: [URL]."
+- "Review my application tracker."
+- "Set up a weekly search for matching internships."
 
-## Installation
+The labels job-skill search, tailor, status, review, interview and automate are also understood as requests; they are not software commands to run in a terminal.
 
-Copy `SKILL.md` into your Claude Skills directory (e.g. `~/.claude/skills/job-skill/` or the
-equivalent user-skills path for your Claude setup), or install via your organization's skill
-catalog if available.
+## Installation files
 
-## Privacy
+SKILL.md contains the reusable workflow. Install it in a skill directory named job-skill. Optional agents/openai.yaml metadata supplies the display name and example prompt.
 
-All data stays within the session. Optional Gmail integration only reads emails from companies
-you've applied to — nothing else. The skill never submits applications, creates accounts, or
-handles CAPTCHAs/OTPs/logins on your behalf; you review the morning report and apply manually.
+Keep personal profiles, CVs, contact details, GPA, transcripts and application trackers out of this public repository. An optional private references/search-profile.md can store a user's search preferences in their own skill installation.
+
+## Limits
+
+This is an instruction-only skill. It does not supply job-board accounts, email access or a scheduler. It uses available connected tools and reports access limits. A search prepares a shortlist; it does not submit applications or send messages.
 
 ## License
 
-MIT — use and adapt freely.
+MIT, as declared by the original repository README. Retain any upstream licence and attribution supplied with the original source.
